@@ -1,0 +1,236 @@
+body {
+    transition: 0.3s;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    background: #fff4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #ffffff;
+    padding: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 30px;
+}
+
+.logo {
+  flex: 0 1 auto;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #FF6A6A, #FFD58D, #FF6A6A);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  display: block;
+  animation: shine 3s linear infinite;
+  border-bottom: 2px solid #FF6A6A;
+  padding-bottom: 5px;
+  width: max-content;
+}
+@keyframes shine {
+     from { background-position: 0% center; }
+    to { background-position: 200% center; }
+}
+
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #FF6A6A;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-action {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.theme-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #FF6A6A;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1);
+}
+
+.theme-btn svg {
+  stroke: #000;
+}
+
+body.dark .theme-btn svg {
+  stroke: #fff;
+}
+
+body.dark .theme-btn:hover {
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.sun-icon { display: none; }
+.moon-icon { display: block; }
+
+body.dark .sun-icon { display: block; }
+body.dark .moon-icon { display: none; }
+
+body.dark {
+    background: #353535;
+    color: #e1e1e1;
+}
+
+body.dark header, body.dark footer {
+    background-color: #2d2f31;
+    border-color: #3f4144;
+}
+
+body.dark .logo, body.dark .nav-links a {
+    color: #ffffff;
+}
+
+body:not(.dark) .nav-links a {
+    color: #333;
+}
+
+body.dark .contact-box, body.dark .contact-info {
+    background: #2d2f31;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+body.dark input, body.dark textarea {
+    background: #1a1c1e;
+    border-color: #4a4c4e;
+    color: white;
+}
+
+.container {
+    padding: 40px 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.contact-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-box h2 {
+    color: #ff7675;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.send-btn {
+    width: 100%;
+    padding: 15px;
+    background: #5b8a72;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: #4a6e5b;
+}
+
+:root {
+  --card: #ffffff;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: var(--card);
+  margin-top: 20px;
+}
+
+body.dark {
+  --card: #333;
+  color: white;
+}
